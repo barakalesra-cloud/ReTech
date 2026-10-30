@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book E-Waste Pickup: ReTech Solutions</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="https://placehold.co/32x32/2D4048/CCF4E5/png?text=R">
+</head>
+<body>
+
+  <header>
+    <h1>
+      <img src="https://placehold.co/120x120/2D4048/CCF4E5/png?text=ReTech" alt="ReTech Logo" class="logo">
+      ReTech Solutions
+    </h1>
+    <p>E-Waste Management</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="book-pickup.html">Book Pickup</a></li>
+      <li><a href="track-order.html">Track Item</a></li>
+      <li><a href="dashboard.html">Management</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section>
+      <h2>Report E-Waste & Request Pickup</h2>
+      <p>Complete the form below to register discarded electronic equipment and assign a collection request.</p>
+
+      <form action="#" method="post">
+        <label for="category">Equipment Category:</label><br>
+        <select id="category" name="category" required>
+          <option value="">-- Select Category --</option>
+          <option value="mobile">Mobile Phones & Tablets</option>
+          <option value="computers">Laptops & Desktops</option>
+          <option value="peripherals">Printers & Accessories</option>
+          <option value="screens">Monitors & Displays</option>
+        </select><br><br>
+
+        <label for="quantity">Quantity (Units):</label><br>
+        <input type="number" id="quantity" name="quantity" min="1" max="50" value="1" required><br><br>
+
+        <label for="description">Item Description / Condition:</label><br>
+        <textarea id="description" name="description" rows="4" placeholder="Specify brand or state..." required></textarea><br><br>
+
+        <label for="pickup-date">Preferred Pickup Date:</label><br>
+        <input type="date" id="pickup-date" name="pickup-date" required><br><br>
+
+        <button type="submit">Submit Pickup Request</button>
+      </form>
+    </section>
+  </main>
+
+  <aside>
+    <h2>Guidelines</h2>
+    <p>Ensure all personal data is cleared from storage devices prior to collection.</p>
+  </aside>
+
+  <footer>
+    <p>ReTech Solutions • E-Waste Management Information System</p>
+    <p>Site built by <em>Mariah Keturah & Lesra Baraka</em>, DBT Year 1, 2026</p>
+  </footer>
+
+</body>
+</html>
