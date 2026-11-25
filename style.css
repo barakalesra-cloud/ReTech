@@ -1,88 +1,207 @@
-/* House style 
-   main: #2D4048; 
-   ground: #CCF4E5; 
-   ink: #182527; 
-   accent: #20CD8D; 
-   headings: Source Serif 4; 
-   body: Source Sans 3; 
-*/
+/* ReTech Solutions Theme: Deep Charcoal Nav & Headings + Forest Green Buttons */
+@import url('https://fonts.googleapis.com/css2?family=Istok+Web:wght@700&family=Montserrat:wght@400;500;600;700&display=swap');
 
-body {
-  background-color: #CCF4E5;
-  color: #182527;
-  font-family: 'Source Sans 3', sans-serif;
+:root {
+  --dark-slate: #2D4048;
+  --deep-charcoal: #182527;
+  --forest-green: #1B4D3E;
+  --soft-mint: #CCF4E5;
+  --emerald: #20CD8D;
+  --white: #FFFFFF;
 }
-h1, h2, h3 {
-  font-family: 'Source Serif 4', serif;
-  color: #2D4048;
-}
-header, nav {
-  background-color: #2D4048;
-  color: #FFFFFF;
-}
-nav ul {
-  display: flex;
-  list-style-type: none;
+
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  gap: 1.5rem;
 }
-nav li {
-  display: inline;
-}
-nav a {
-  color: #FFFFFF;
-}
-a {
-  color: #20CD8D;
-}
-button {
-  background-color: #20CD8D;
-  color: #182527;
-  font-weight: bold;
-  border: none;
-  padding: 0.5rem 1rem;
-}
+
+/* Base Page Layout & Typography */
 body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--soft-mint);
+  color: var(--deep-charcoal);
+  line-height: 1.6;
   display: grid;
   grid-template-areas:
     "header header"
     "nav nav"
     "main aside"
     "footer footer";
-  grid-template-columns: minmax(0, 1fr) 18rem; 
+  grid-template-columns: minmax(0, 1fr) 18rem;
   gap: 1.5rem;
-  margin: 0;
-  padding: 0;
 }
+
+/* Title Font: Istok Web */
+header h1 {
+  font-family: 'Istok Web', sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.5px;
+  color: var(--white);
+  line-height: 1.1;
+}
+
+/* Headings, Nav & Buttons: Montserrat */
+h2, h3, nav a, button {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Headings: Deep Charcoal */
+h2, h3 {
+  color: var(--deep-charcoal);
+  margin-bottom: 0.75rem;
+}
+
+p {
+  margin-bottom: 0.85rem;
+}
+
+/* Header: Dark Slate */
 header {
   grid-area: header;
-  padding: 1.5rem;
+  background-color: var(--dark-slate);
+  color: var(--white);
+  padding: 1.25rem 1.5rem;
 }
+
+header p {
+  margin-top: 0.35rem;
+  margin-bottom: 0;
+  color: var(--soft-mint);
+  font-weight: 500;
+}
+
+.facility-img {
+  width: 100%;
+  max-width: 460px;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  margin-top: 0.75rem;
+}
+
+/* Horizontal ReTech Logo Image */
+.logo {
+  height: 68px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  display: block;
+}
+
+/* Navigation Bar: Deep Charcoal */
 nav {
   grid-area: nav;
-  padding: 0.5rem 1.5rem;
+  background-color: var(--deep-charcoal);
+  color: var(--white);
+  padding: 0.7rem 1.5rem;
 }
-main {
-  grid-area: main;
-  padding: 1.5rem;
-}
-aside {
-  grid-area: aside;
-  padding: 1.5rem;
-}
-footer {
-  grid-area: footer;
-  padding: 1.5rem;
-}
+
 nav ul {
   display: flex;
   list-style-type: none;
-  margin: 0;
-  padding: 0;
   gap: 1.5rem;
   flex-wrap: wrap;
+  align-items: center;
 }
+
+nav a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.25s ease;
+}
+
+/* Hover Effects: Emerald */
+nav a:hover {
+  color: var(--emerald);
+}
+
+a {
+  color: var(--forest-green);
+  font-weight: 600;
+  transition: color 0.25s ease;
+}
+
+a:hover {
+  color: var(--emerald);
+}
+
+/* Content Cards (main & aside): White */
+main {
+  grid-area: main;
+  padding: 1.5rem;
+  background-color: var(--white);
+  border-radius: 10px;
+  margin-left: 1.5rem;
+  box-shadow: 0 4px 14px rgba(24, 37, 39, 0.08);
+}
+
+aside {
+  grid-area: aside;
+  padding: 1.5rem;
+  background-color: var(--white);
+  border-radius: 10px;
+  margin-right: 1.5rem;
+  align-self: start;
+  box-shadow: 0 4px 14px rgba(24, 37, 39, 0.08);
+}
+
+/* Footer: Dark Slate */
+footer {
+  grid-area: footer;
+  background-color: var(--dark-slate);
+  color: var(--white);
+  padding: 1.5rem;
+  text-align: center;
+}
+
+footer p:last-child {
+  margin-bottom: 0;
+}
+
+/* Primary Buttons: Forest Green + Emerald Hover */
+button,
+input[type="submit"] {
+  background-color: var(--forest-green);
+  color: var(--white);
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  padding: 0.65rem 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.2s ease;
+}
+
+button:hover,
+input[type="submit"]:hover {
+  background-color: var(--emerald);
+  color: var(--deep-charcoal);
+  transform: translateY(-1px);
+}
+
+/* Form Inputs */
+input,
+select,
+textarea {
+  font-family: 'Montserrat', sans-serif;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid #b8c7c1;
+  border-radius: 6px;
+  max-width: 100%;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--forest-green);
+  box-shadow: 0 0 0 3px rgba(32, 205, 141, 0.25);
+}
+
+/* Tables */
 .table-scroll {
   overflow-x: auto;
   max-width: 100%;
@@ -95,6 +214,108 @@ table {
 
 th, td {
   padding: 0.75rem;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #dce6e2;
   text-align: left;
+}
+
+th {
+  background-color: #f2f9f6;
+  color: var(--deep-charcoal);
+  font-weight: 600;
+}
+
+/* Parallax Hero Banner */
+.hero-parallax {
+  background-image: linear-gradient(rgba(24, 37, 39, 0.74), rgba(45, 64, 72, 0.8)),
+                    url('../images/hero-ewaste.jpg');
+  min-height: 320px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--white);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  padding: 2.5rem 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-parallax h2 {
+  color: var(--white);
+  font-size: 1.85rem;
+}
+
+/* Image Link Hover: Light Overlay & Cards */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.image-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  background: var(--white);
+  border: 1px solid #e2ece8;
+  box-shadow: 0 4px 14px rgba(24, 37, 39, 0.06);
+  padding-bottom: 1rem;
+}
+
+.image-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 0.75rem;
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.image-card:hover img {
+  transform: scale(1.04);
+  filter: brightness(1.15);
+}
+
+.image-card h3,
+.image-card p {
+  padding: 0 1rem;
+}
+
+/* Page Scroll: Slide In Animation */
+.slide-in {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s ease-out, transform 0.65s ease-out;
+}
+
+.slide-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive Stack on Smaller Screens */
+@media (max-width: 800px) {
+  body {
+    grid-template-areas:
+      "header"
+      "nav"
+      "main"
+      "aside"
+      "footer";
+    grid-template-columns: 1fr;
+  }
+
+  main,
+  aside {
+    margin: 0 1rem;
+  }
+
+  .hero-parallax {
+    background-attachment: scroll;
+  }
 }
